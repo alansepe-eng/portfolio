@@ -2,48 +2,33 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Alan",
+  lastName: "Sepe",
+  name: `Alan Sepe`,
+  role: "Executivo de Operações Industriais & Engenharia",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "alansepe.eng@gmail.com",
+  location: "America/Sao_Paulo",
+  languages: ["Português", "Inglês", "Espanhol"],
 };
 
 const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  display: false,
+  title: <>Newsletter de {person.firstName}</>,
+  description: <>Insights sobre operações industriais, engenharia e transformação de processos.</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/alansepe-eng",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/alansepe",
     essential: true,
   },
   {
@@ -58,34 +43,37 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `${person.name} — Portfólio`,
+  description: `Portfólio de ${person.name}, ${person.role}`,
+  headline: <>Transformando operações industriais em resultados concretos</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Destaque</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Projeto em destaque
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      Sou {person.firstName}, engenheiro eletricista e executivo de operações com mais de{" "}
+      <Text as="span" size="xl" weight="strong">19 anos de experiência</Text>{" "}
+      em manufatura, engenharia e transformação de processos. <br />
+      Atuo em projetos de energia renovável, consultoria executiva e estruturação de operações industriais.
+    </>
   ),
 };
 
 const about: About = {
   path: "/about",
   label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  title: `Sobre — ${person.name}`,
+  description: `Conheça ${person.name}, ${person.role}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,60 +82,97 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Introdução",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Engenheiro Eletricista com MBA em Gestão Industrial e mais de 19 anos de experiência em
+        manufatura, engenharia e transformação de processos. Atuação em multinacionais e empresas
+        em crescimento, liderando operações, projetos de energia renovável e consultoria executiva.
+        Perfil reconhecido por organizar ambientes complexos e transformar objetivos em execução
+        disciplinada.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "Experiência Profissional",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "SEPE Engenharia",
+        timeframe: "2022 - Presente",
+        role: "Sócio-Diretor e Consultor Executivo",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Liderou engenharia e desenvolvimento de projetos de energia renovável na Volteon
+            Energia, incluindo modelagem técnico-econômica, estudos elétricos e relacionamento
+            regulatório.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Atuou em nível executivo na VPA Automação, com mapeamento, padronização e otimização
+            de fluxos operacionais e apoio à expansão da empresa.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Crossfire Protection / CrossPower Energia Solar",
+        timeframe: "2021 - 2023",
+        role: "Gerente de Projetos e Operações",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Gerenciou projetos multidisciplinares em engenharia civil, elétrica, hidrossanitária
+            e energia solar para clientes como Fiat Chrysler, Gerdau, Coca-Cola e Renault Brasil.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Conduziu cronogramas, gestão de riscos e integração de equipes utilizando PMBOK,
+            Ishikawa, 5W2H e análise de causa raiz.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Mondelēz International",
+        timeframe: "2015 - 2020",
+        role: "Especialista de Processos Sênior / Vertical Start-up",
+        achievements: [
+          <>
+            Participou decisivamente do startup brownfield da fábrica de Gums & Candies em
+            Curitiba, envolvendo transferência de operações, comissionamento e parametrização
+            de linhas produtivas.
+          </>,
+          <>
+            Liderou treinamentos em Kaizen, DMAIC, IIM e Indústria 4.0, contribuindo para
+            eliminação de causas raiz e ganho de eficiência operacional.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Emplal Embalagens Plásticas",
+        timeframe: "2014 - 2015",
+        role: "Coordenador de Produção",
+        achievements: [
+          <>
+            Implantou TPM, Lean Six Sigma, 5S, CEP, 8D e PDCA, estruturando KPIs e coordenando
+            auditorias com DNV, IQB e SGS para ISO 9001, ISO 22000 e HACCP.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Dixie Toga S.A. / Bemis Company",
+        timeframe: "2006 - 2014",
+        role: "Engenheiro de Processos / Supervisor de Produção",
+        achievements: [
+          <>
+            Consolidou experiência em impressão flexográfica e roto gravura, evoluindo para
+            liderança de operações com foco em padronização, redução de refugos e
+            desenvolvimento de pessoas.
           </>,
         ],
         images: [],
@@ -155,78 +180,67 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Formação Acadêmica",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "SENAI",
+        description: <>MBA em Gestão Industrial — 2014</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Faculdade Pitágoras",
+        description: <>Engenharia Elétrica / Telecomunicações — 2008</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Competências Técnicas",
     skills: [
       {
-        title: "Figma",
+        title: "Operações & Excelência Operacional",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Lean Six Sigma, TPM, Kaizen, DMAIC, 5S, PDCA, OEE, gestão de perdas,
+            melhoria contínua e governança operacional.
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "Lean Six Sigma", icon: "check" },
+          { name: "TPM", icon: "check" },
+          { name: "Kaizen", icon: "check" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Gestão de Projetos",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            PMBOK, cronogramas físico-financeiros, gestão de riscos, stakeholders e
+            integração de equipes multidisciplinares em projetos industriais de grande porte.
+          </>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "PMBOK", icon: "check" },
+          { name: "5W2H", icon: "check" },
+          { name: "Ishikawa", icon: "check" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Energia Renovável & Engenharia",
+        description: (
+          <>
+            Projetos de geração centralizada, soluções Power-to-X, modelagem técnico-econômica,
+            estudos elétricos e relacionamento com órgãos reguladores.
+          </>
+        ),
+        tags: [
+          { name: "Energia Solar", icon: "check" },
+          { name: "Power-to-X", icon: "check" },
+          { name: "Regulatório", icon: "check" },
         ],
+        images: [],
       },
     ],
   },
@@ -235,70 +249,23 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  title: "Artigos sobre operações e engenharia",
+  description: `Insights e reflexões de ${person.name} sobre indústria, processos e liderança`,
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  label: "Trabalhar",
+  title: `Projetos — ${person.name}`,
+  description: `Projetos e cases de ${person.name}`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
+  title: `Galeria — ${person.name}`,
+  description: `Galeria de ${person.name}`,
+  images: [],
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };
